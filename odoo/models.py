@@ -3315,14 +3315,17 @@ class BaseModel(object):
             if len(uids) != 1 or uids[0] != self._uid:
                 raise AccessError(_('For this kind of document, you may only access records you created yourself.\n\n(Document type: %s)') % (self._description,))
         else:
-            where_clause, where_params, tables = self.env['ir.rule'].domain_get(self._name, operation)
-            if where_clause:
-                query = "SELECT %s.id FROM %s WHERE %s.id IN %%s AND " % (self._table, ",".join(tables), self._table)
-                query = query + " AND ".join(where_clause)
-                for sub_ids in self._cr.split_for_in_conditions(self.ids):
-                    self._cr.execute(query, [sub_ids] + where_params)
-                    returned_ids = [x[0] for x in self._cr.fetchall()]
-                    self.browse(sub_ids)._check_record_rules_result_count(returned_ids, operation)
+            query = self.env['ir.rule'].domain_get(self._name, operation)
+            table = '"%s"' % self._table
+            for sub_ids in self.env.cr.split_for_in_conditions(self.ids):
+                chunk_query = query + Query([table], [table + '.id IN %s'], [sub_ids])
+                from_clause, where_clause, params = chunk_query.get_sql()
+                self.env.cr.execute(
+                    "SELECT {table}.id FROM {from_clause} WHERE {where_clause}".format(
+                        table=table, from_clause=from_clause, where_clause=where_clause or '1=1'),
+                    params)
+                returned_ids = [x['id'] for x in self.env.cr.dictfetchall()]
+                self.browse(sub_ids)._check_record_rules_result_count(returned_ids, operation)
 
     @api.multi
     def create_workflow(self):
@@ -4036,15 +4039,19 @@ class BaseModel(object):
             if not any(item[0] == 'active' for item in domain):
                 domain = [('active', '=', 1)] + domain
 
+        joins = {}
         if domain:
             e = expression.expression(domain, self)
             tables = e.get_tables()
             where_clause, where_params = e.to_sql()
             where_clause = [where_clause] if where_clause else []
+            joins = e.joins
         else:
             where_clause, where_params, tables = [], [], ['"%s"' % self._table]
 
-        return Query(tables, where_clause, where_params)
+        query = Query(tables, where_clause, where_params)
+        query.joins = joins
+        return query
 
     def _check_qorder(self, word):
         if not regex_order.match(word):
@@ -4061,11 +4068,11 @@ class BaseModel(object):
         if self._uid == SUPERUSER_ID:
             return
 
-        def apply_rule(clauses, params, tables, parent_model=None):
+        def apply_rule(rule_query, parent_model=None):
             """ :param parent_model: name of the parent model, if the added
                     clause comes from a parent model
             """
-            if clauses:
+            if rule_query.where_clause:
                 if parent_model:
                     # as inherited rules are being applied, we need to add the
                     # missing JOIN to reach the parent table (if not JOINed yet)
@@ -4073,19 +4080,21 @@ class BaseModel(object):
                     parent_alias = '"%s"' % self._inherits_join_add(self, parent_model, query)
                     # inherited rules are applied on the external table, replace
                     # parent_table by parent_alias
-                    clauses = [clause.replace(parent_table, parent_alias) for clause in clauses]
+                    rule_query.where_clause = [
+                        clause.replace(parent_table, parent_alias)
+                        for clause in rule_query.where_clause]
                     # replace parent_table by parent_alias, and introduce
                     # parent_alias if needed
-                    tables = [
-                        (parent_table + ' as ' + parent_alias) if table == parent_table \
-                            else table.replace(parent_table, parent_alias)
-                        for table in tables
-                    ]
-                query.where_clause += clauses
-                query.where_clause_params += params
-                for table in tables:
-                    if table not in query.tables:
-                        query.tables.append(table)
+                    new_tables = []
+                    for table in rule_query.tables:
+                        if table == parent_table:
+                            new_tables.append(parent_table + ' as ' + parent_alias)
+                            if parent_table in rule_query.joins:
+                                rule_query.joins[parent_alias] = rule_query.joins.pop(parent_table)
+                        else:
+                            new_tables.append(table.replace(parent_table, parent_alias))
+                    rule_query.tables = new_tables
+                query.append(rule_query)
 
         if self._transient:
             # One single implicit access rule for transient models: owner only!
@@ -4093,18 +4102,18 @@ class BaseModel(object):
             # log_access enabled, so that 'create_uid' is always there.
             domain = [('create_uid', '=', self._uid)]
             tquery = self._where_calc(domain, active_test=False)
-            apply_rule(tquery.where_clause, tquery.where_clause_params, tquery.tables)
+            apply_rule(tquery)
             return
 
         # apply main rules on the object
         Rule = self.env['ir.rule']
-        where_clause, where_params, tables = Rule.domain_get(self._name, mode)
-        apply_rule(where_clause, where_params, tables)
+        rule_query = Rule.domain_get(self._name, mode)
+        apply_rule(rule_query)
 
         # apply ir.rules from the parents (through _inherits)
         for parent_model in self._inherits:
-            where_clause, where_params, tables = Rule.domain_get(parent_model, mode)
-            apply_rule(where_clause, where_params, tables, parent_model)
+            rule_query = Rule.domain_get(parent_model, mode)
+            apply_rule(rule_query, parent_model)
 
     @api.model
     def _generate_translated_field(self, table_alias, field, query):

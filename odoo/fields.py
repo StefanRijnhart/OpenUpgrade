@@ -2425,11 +2425,14 @@ class Many2many(_RelationalMulti):
 
         def unlink_all():
             # remove all records for which user has access rights
-            clauses, params, tables = comodel.env['ir.rule'].domain_get(comodel._name)
-            cond = " AND ".join(clauses) if clauses else "1=1"
-            query = """ DELETE FROM {rel} USING {tables}
-                        WHERE {rel}.{id1} IN %s AND {rel}.{id2}={table}.id AND {cond}
-                    """.format(table=comodel._table, tables=','.join(tables), cond=cond, **parts)
+            rule_query = records.env['ir.rule'].domain_get(comodel._name)
+            from_clause, where_clause, params = rule_query.get_sql()
+            where_clause = where_clause or " 1=1 "
+            query = """
+                DELETE FROM {rel} WHERE {rel}.{id1} IN %s AND {rel}.{id2} IN (
+                    SELECT {table}.id FROM {from_clause} WHERE {where_clause})
+                    """.format(rel=self.relation, id1=self.column1, id2=self.column2, table=comodel._table,
+                               from_clause=from_clause, where_clause=where_clause)
             cr.execute(query, [tuple(records.ids)] + params)
 
         for act in (value or []):

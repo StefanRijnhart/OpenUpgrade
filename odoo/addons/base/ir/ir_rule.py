@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 import time
@@ -6,6 +7,7 @@ from collections import defaultdict
 from odoo import api, fields, models, tools, SUPERUSER_ID, _
 from odoo.exceptions import ValidationError
 from odoo.osv import expression
+from odoo.osv.query import Query
 from odoo.tools.safe_eval import safe_eval
 
 
@@ -127,9 +129,8 @@ class IrRule(models.Model):
             # involve objects on which the real uid has no acces rights.
             # This means also there is no implicit restriction (e.g. an object
             # references another object the user can't see).
-            query = self.env[model_name].sudo()._where_calc(dom, active_test=False)
-            return query.where_clause, query.where_clause_params, query.tables
-        return [], [], ['"%s"' % self.env[model_name]._table]
+            return self.env[model_name].sudo()._where_calc(dom, active_test=False)
+        return Query(['"%s"' % self.env[model_name]._table])
 
     @api.multi
     def unlink(self):
