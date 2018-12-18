@@ -1919,7 +1919,8 @@ class Many2one(_Relational):
     column_type = ('int4', 'int4')
     _slots = {
         'ondelete': 'set null',         # what to do when value is deleted
-        'auto_join': False,             # whether joins are generated upon search
+        # Customization: auto_join is enabled for all Many2one fields
+        'auto_join': True,              # whether joins are generated upon search
         'delegate': False,              # whether self implements delegation
     }
 
@@ -2157,7 +2158,8 @@ class One2many(_RelationalMulti):
     type = 'one2many'
     _slots = {
         'inverse_name': None,           # name of the inverse field
-        'auto_join': False,             # whether joins are generated upon search
+        # Customization: auto_join is enabled for all One2many fields
+        'auto_join': True,              # whether joins are generated upon search
         'limit': None,                  # optional limit to use upon read
         'copy': False,                  # o2m are not copied by default
     }
