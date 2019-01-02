@@ -4076,23 +4076,23 @@ class BaseModel(object):
                 if parent_model:
                     # as inherited rules are being applied, we need to add the
                     # missing JOIN to reach the parent table (if not JOINed yet)
-                    parent_table = '"%s"' % self.env[parent_model]._table
-                    parent_alias = '"%s"' % self._inherits_join_add(self, parent_model, query)
+                    parent_table = self.env[parent_model]._table
+                    parent_alias = self._inherits_join_add(self, parent_model, query)
                     # inherited rules are applied on the external table, replace
                     # parent_table by parent_alias
                     rule_query.where_clause = [
-                        clause.replace(parent_table, parent_alias)
+                        clause.replace('"%s"' % parent_table, '"%s"' % parent_alias)
                         for clause in rule_query.where_clause]
                     # replace parent_table by parent_alias, and introduce
                     # parent_alias if needed
                     new_tables = []
                     for table in rule_query.tables:
-                        if table == parent_table:
-                            new_tables.append(parent_table + ' as ' + parent_alias)
+                        if table == '"%s"' % parent_table:
+                            new_tables.append('"%s" as "%s"' % (parent_table, parent_alias))
                             if parent_table in rule_query.joins:
                                 rule_query.joins[parent_alias] = rule_query.joins.pop(parent_table)
                         else:
-                            new_tables.append(table.replace(parent_table, parent_alias))
+                            new_tables.append(table.replace('"%s"' % parent_table, '"%s"' % parent_alias))
                     rule_query.tables = new_tables
                 query.append(rule_query)
 

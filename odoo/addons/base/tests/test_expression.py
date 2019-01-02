@@ -640,6 +640,7 @@ class TestAutoJoin(TransactionCase):
         partner_obj = self.env['res.partner']
         state_obj = self.env['res.country.state']
         bank_obj = self.env['res.partner.bank']
+        user_obj = self.env['res.users']
 
         # Get test columns
         def patch_auto_join(model, fname, value):
@@ -676,6 +677,19 @@ class TestAutoJoin(TransactionCase):
         # --------------------------------------------------
 
         name_test = '12'
+
+        # Test record rule on inherited column
+        self._reinit_mock()
+        patch_auto_join(user_obj, 'partner_id', True)
+        patch_auto_join(partner_obj, 'company_id', True)
+        self.env['ir.rule'].create({
+            'model_id': self.env.ref('base.model_res_partner').id,
+            'name': 'Test inherit auto_join',
+            'domain_force': "['|',('company_id','child_of',[user.company_id.id]),('company_id','=',False)]",
+        })
+        self.env(user=self.env.ref('base.user_demo'))['res.users'].search([])
+        patch_auto_join(user_obj, 'partner_id', False)
+        patch_auto_join(partner_obj, 'company_id', False)
 
         # Do: one2many without _auto_join
         self._reinit_mock()
