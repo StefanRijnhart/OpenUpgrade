@@ -1,0 +1,9 @@
+---Models in module 'website_event'---
+---Fields in module 'website_event'---
+---XML records in module 'website_event'---
+NEW ir.ui.view: website_event.assets_frontend
+NEW ir.ui.view: website_event.event_right_column
+NEW ir.ui.view: website_event.event_time
+NEW ir.ui.view: website_event.s_country_events
+DEL ir.ui.view: website_event.brand_promotion
+DEL ir.ui.view: website_event.event_script

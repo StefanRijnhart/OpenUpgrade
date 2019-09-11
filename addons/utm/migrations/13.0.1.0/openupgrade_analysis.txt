@@ -1,0 +1,39 @@
+---Models in module 'utm'---
+new model utm.stage
+new model utm.tag
+---Fields in module 'utm'---
+utm          / utm.campaign             / color (integer)               : NEW
+utm          / utm.campaign             / is_website (boolean)          : NEW hasdefault
+utm          / utm.campaign             / stage_id (many2one)           : NEW relation: utm.stage, required, req_default: function, hasdefault
+utm          / utm.campaign             / tag_ids (many2many)           : NEW relation: utm.tag
+utm          / utm.campaign             / user_id (many2one)            : NEW relation: res.users, required, req_default: function, hasdefault
+utm          / utm.stage                / name (char)                   : NEW required
+utm          / utm.stage                / sequence (integer)            : NEW
+utm          / utm.tag                  / color (integer)               : NEW
+utm          / utm.tag                  / name (char)                   : NEW required
+---XML records in module 'utm'---
+NEW ir.actions.act_window: utm.action_view_utm_stage
+NEW ir.actions.act_window: utm.action_view_utm_tag
+NEW ir.actions.act_window: utm.utm_campaign_action
+DEL ir.actions.act_window: utm.utm_campaign_act
+NEW ir.model.access: utm.access_utm_campaign_system
+NEW ir.model.access: utm.access_utm_stage_system
+NEW ir.model.access: utm.access_utm_stage_user
+NEW ir.model.access: utm.access_utm_tag_system
+NEW ir.model.access: utm.access_utm_tag_user
+NEW ir.ui.view: utm.utm_campaign_view_form
+NEW ir.ui.view: utm.utm_campaign_view_kanban
+NEW ir.ui.view: utm.utm_campaign_view_tree
+NEW ir.ui.view: utm.utm_medium_view_search
+NEW ir.ui.view: utm.utm_stage_view_search
+NEW ir.ui.view: utm.utm_stage_view_tree
+NEW ir.ui.view: utm.utm_tag_view_form
+NEW ir.ui.view: utm.view_utm_campaign_view_search
+DEL ir.ui.view: utm.utm_campaign_form
+DEL ir.ui.view: utm.utm_campaign_tree
+NEW utm.medium: utm.utm_medium_linkedin
+NEW utm.stage: utm.campaign_stage_1
+NEW utm.stage: utm.campaign_stage_2
+NEW utm.stage: utm.campaign_stage_3
+NEW utm.stage: utm.default_utm_stage
+NEW utm.tag: utm.utm_tag_1

@@ -1,0 +1,11 @@
+---Models in module 'test_access_rights'---
+new model test_access_right.parent
+---Fields in module 'test_access_rights'---
+test_access_rights / test_access_right.parent / _inherits (False)             : NEW
+test_access_rights / test_access_right.parent / obj_id (many2one)             : NEW relation: test_access_right.some_obj, required
+test_access_rights / test_access_right.some_obj / company_id (many2one)         : NEW relation: res.company
+test_access_rights / test_access_right.some_obj / forbidden (integer)           : NEW hasdefault
+test_access_rights / test_access_right.some_obj / forbidden2 (integer)          : NEW
+---XML records in module 'test_access_rights'---
+NEW ir.model.access: test_access_rights.access_test_access_right_parent
+NEW res.groups: test_access_rights.test_group

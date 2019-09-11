@@ -1,0 +1,5 @@
+---Models in module 'website_links'---
+---Fields in module 'website_links'---
+---XML records in module 'website_links'---
+NEW ir.ui.view: website_links.assets_tests
+DEL ir.ui.view: website_links.assets_nvd3

@@ -1,0 +1,6 @@
+---Models in module 'account_cancel'---
+---Fields in module 'account_cancel'---
+---XML records in module 'account_cancel'---
+NEW ir.ui.view: account_cancel.view_account_payment_form
+DEL ir.ui.view: account_cancel.invoice_form_cancel_inherit
+DEL ir.ui.view: account_cancel.invoice_supplier_cancel_form_inherit

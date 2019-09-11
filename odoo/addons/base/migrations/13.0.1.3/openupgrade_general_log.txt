@@ -1,0 +1,1012 @@
+---Models in module 'general'---
+obsolete model account.abstract.payment [module account]
+obsolete model account.invoice [module account]
+obsolete model account.invoice.confirm [module account]
+obsolete model account.invoice.import.wizard [module account]
+obsolete model account.invoice.line [module account]
+obsolete model account.invoice.refund [module account]
+obsolete model account.invoice.tax [module account]
+obsolete model account.register.payments [module account]
+obsolete model account.voucher [module account_voucher]
+obsolete model account.voucher.line [module account_voucher]
+obsolete model cash.box.in [module account]
+obsolete model crm.lead.convert2task [module crm_project]
+obsolete model crm.reveal.industry [module crm_reveal]
+obsolete model crm.reveal.role [module crm_reveal]
+obsolete model crm.reveal.seniority [module crm_reveal]
+obsolete model decimal.precision.test [module decimal_precision]
+obsolete model hr.contract.advantage.template [module hr_payroll]
+obsolete model hr.contract.type [module hr_contract]
+obsolete model hr.contribution.register [module hr_payroll]
+obsolete model hr.holidays.summary.dept [module hr_holidays]
+obsolete model hr.payroll.structure [module hr_payroll]
+obsolete model hr.payslip [module hr_payroll]
+obsolete model hr.payslip.employees [module hr_payroll]
+obsolete model hr.payslip.input [module hr_payroll]
+obsolete model hr.payslip.line [module hr_payroll]
+obsolete model hr.payslip.run [module hr_payroll]
+obsolete model hr.payslip.worked_days [module hr_payroll]
+obsolete model hr.rule.input [module hr_payroll]
+obsolete model hr.salary.rule [module hr_payroll]
+obsolete model hr.salary.rule.category [module hr_payroll]
+obsolete model lunch.order.line [module lunch]
+obsolete model lunch.order.line.lucky [module lunch]
+obsolete model mail.blacklist.mixin [module mail]
+obsolete model mail.mail.statistics [module mass_mailing]
+obsolete model mail.mass_mailing [module mass_mailing]
+obsolete model mail.mass_mailing.campaign [module mass_mailing]
+obsolete model mail.mass_mailing.contact [module mass_mailing]
+obsolete model mail.mass_mailing.list [module mass_mailing]
+obsolete model mail.mass_mailing.list_contact_rel [module mass_mailing]
+obsolete model mail.mass_mailing.stage [module mass_mailing]
+obsolete model mail.mass_mailing.tag [module mass_mailing]
+obsolete model mail.mass_mailing.test [module mass_mailing]
+obsolete model mail.statistics.report [module mass_mailing]
+obsolete model mass.mailing.list.merge [module mass_mailing]
+obsolete model mass.mailing.schedule.date [module mass_mailing]
+obsolete model mrp.subproduct [module mrp_byproduct]
+obsolete model payslip.lines.contribution.register [module hr_payroll]
+obsolete model pos.open.statement [module point_of_sale]
+obsolete model product.price.history [module product]
+obsolete model product.putaway [module stock]
+obsolete model project.task.assign.sale [module sale_timesheet]
+obsolete model report.hr_payroll.report_contributionregister [module hr_payroll]
+obsolete model report.hr_payroll.report_payslipdetails [module hr_payroll]
+obsolete model report.stock.forecast [module stock]
+obsolete model slide.category [module website_slides]
+obsolete model sms.send_sms [module sms]
+obsolete model stock.fixed.putaway.strat [module stock]
+obsolete model survey.mail.compose.message [module survey]
+obsolete model survey.page [module survey]
+obsolete model survey.stage [module survey]
+new model account.accrual.accounting.wizard [module account]
+new model account.journal.group [module account]
+new model account.payment.register [module account]
+new model account.root [module account]
+new model account.tax.repartition.line [module account]
+new model account.tax.repartition.line.template [module account]
+new model account.tax.report.line [module account]
+new model base.document.layout [module base]
+new model base.geo_provider [module base_geolocalize]
+new model base.geocoder [module base_geolocalize]
+new model choose.delivery.carrier [module delivery]
+new model closing.balance.confirm.wizard [module point_of_sale]
+new model confirm.stock.sms [module stock_sms]
+new model crm.iap.lead.helpers [module crm_iap_lead]
+new model crm.iap.lead.industry [module crm_iap_lead]
+new model crm.iap.lead.mining.request [module crm_iap_lead]
+new model crm.iap.lead.role [module crm_iap_lead]
+new model crm.iap.lead.seniority [module crm_iap_lead]
+new model crm.lead.scoring.frequency [module crm]
+new model crm.lead.scoring.frequency.field [module crm]
+new model crm.quotation.partner [module sale_crm]
+new model event.event.configurator [module event_sale]
+new model gamification.karma.rank [module gamification]
+new model hr.departure.wizard [module hr]
+new model hr.employee.base [module hr]
+new model hr.employee.public [module hr]
+new model hr.employee.skill [module hr_skills]
+new model hr.plan [module hr]
+new model hr.plan.activity.type [module hr]
+new model hr.plan.wizard [module hr]
+new model hr.resume.line [module hr_skills]
+new model hr.resume.line.type [module hr_skills]
+new model hr.skill [module hr_skills]
+new model hr.skill.level [module hr_skills]
+new model hr.skill.type [module hr_skills]
+new model hr.user.work.entry.employee [module hr_work_entry]
+new model hr.work.entry [module hr_work_entry]
+new model hr.work.entry.type [module hr_work_entry]
+new model iap.enrich.api [module crm_iap_lead_enrich]
+new model image.mixin [module base]
+new model ir.model.fields.selection [module base]
+new model lunch.cashmove.report [module lunch]
+new model lunch.location [module lunch]
+new model lunch.order.temp [module lunch]
+new model lunch.product.report [module lunch]
+new model lunch.supplier [module lunch]
+new model lunch.topping [module lunch]
+new model mail.address.mixin [module mail]
+new model mail.test.cc [module test_mail]
+new model mail.test.gateway [module test_mail]
+new model mail.test.multi.company [module test_mail]
+new model mail.test.sms [module test_mail_full]
+new model mail.test.sms.bl [module test_mail_full]
+new model mail.test.sms.partner [module test_mail_full]
+new model mail.thread.blacklist [module mail]
+new model mail.thread.cc [module mail]
+new model mail.thread.phone [module phone_validation]
+new model mailing.contact [module mass_mailing]
+new model mailing.contact.subscription [module mass_mailing]
+new model mailing.list [module mass_mailing]
+new model mailing.list.merge [module mass_mailing]
+new model mailing.mailing [module mass_mailing]
+new model mailing.mailing.schedule.date [module mass_mailing]
+new model mailing.mailing.test [module mass_mailing]
+new model mailing.sms.test [module mass_mailing_sms]
+new model mailing.trace [module mass_mailing]
+new model mailing.trace.report [module mass_mailing]
+new model mrp.abstract.workorder [module mrp]
+new model mrp.abstract.workorder.line [module mrp]
+new model mrp.bom.byproduct [module mrp]
+new model mrp.workorder.line [module mrp]
+new model payment.link.wizard [module payment]
+new model phone.blacklist [module phone_validation]
+new model pos.payment [module point_of_sale]
+new model pos.payment.method [module point_of_sale]
+new model rating.parent.mixin [module rating]
+new model repair.tags [module repair]
+new model report.sale_coupon.report_coupon [module sale_coupon]
+new model report.stock.quantity [module stock]
+new model reset.view.arch.wizard [module base]
+new model sale.coupon [module sale_coupon]
+new model sale.coupon.apply.code [module sale_coupon]
+new model sale.coupon.generate [module sale_coupon]
+new model sale.coupon.program [module sale_coupon]
+new model sale.coupon.reward [module sale_coupon]
+new model sale.coupon.rule [module sale_coupon]
+new model slide.answer [module website_slides]
+new model slide.channel.invite [module website_slides]
+new model slide.channel.partner [module website_slides]
+new model slide.channel.tag [module website_slides]
+new model slide.channel.tag.group [module website_slides]
+new model slide.question [module website_slides]
+new model slide.slide.link [module website_slides]
+new model slide.slide.partner [module website_slides]
+new model sms.cancel [module sms]
+new model sms.composer [module sms]
+new model sms.resend [module sms]
+new model sms.resend.recipient [module sms]
+new model sms.sms [module sms]
+new model sms.template [module sms]
+new model snailmail.letter.cancel [module snailmail]
+new model snailmail.letter.format.error [module snailmail]
+new model snailmail.letter.missing.required.fields [module snailmail]
+new model stock.assign.serial [module stock]
+new model stock.picking.responsible [module stock]
+new model stock.putaway.rule [module stock]
+new model stock.valuation.layer [module stock_account]
+new model survey.invite [module survey]
+new model tab.a [module test_action_bindings]
+new model tab.b [module test_action_bindings]
+new model test_access_right.parent [module test_access_rights]
+new model test_convert.usered [module test_convert]
+new model test_performance.bacon [module test_performance]
+new model test_performance.eggs [module test_performance]
+new model utm.stage [module utm]
+new model utm.tag [module utm]
+new model web_editor.assets [module web_editor]
+new model website.mass_mailing.popup [module website_mass_mailing]
+new model website.visitor [module website]
+new model website.visitor.page [module website]
+---Fields in module 'general'---
+# 7331 fields matched,
+# Direct match: 7240
+# Found in other module: 91
+# Found with different type: 0
+# In obsolete models: 582
+# New columns: 2264
+# Not matched: 959
+---XML records in module 'general'---
+ERROR: module not in list of installed modules:
+---Models in module 'account_voucher'---
+obsolete model account.voucher
+obsolete model account.voucher.line
+---Fields in module 'account_voucher'---
+account_voucher / account.voucher          / account_date (date)           : DEL
+account_voucher / account.voucher          / account_id (many2one)         : DEL relation: account.account, required
+account_voucher / account.voucher          / amount (float)                : DEL
+account_voucher / account.voucher          / company_id (many2one)         : DEL relation: res.company
+account_voucher / account.voucher          / currency_id (many2one)        : DEL relation: res.currency
+account_voucher / account.voucher          / date (date)                   : DEL
+account_voucher / account.voucher          / date_due (date)               : DEL
+account_voucher / account.voucher          / journal_id (many2one)         : DEL relation: account.journal, required, req_default: function
+account_voucher / account.voucher          / line_ids (one2many)           : DEL relation: account.voucher.line
+account_voucher / account.voucher          / message_follower_ids (one2many): DEL relation: mail.followers
+account_voucher / account.voucher          / message_ids (one2many)        : DEL relation: mail.message
+account_voucher / account.voucher          / message_main_attachment_id (many2one): DEL relation: ir.attachment
+account_voucher / account.voucher          / move_id (many2one)            : DEL relation: account.move
+account_voucher / account.voucher          / name (char)                   : DEL
+account_voucher / account.voucher          / narration (text)              : DEL
+account_voucher / account.voucher          / number (char)                 : DEL
+account_voucher / account.voucher          / partner_id (many2one)         : DEL relation: res.partner
+account_voucher / account.voucher          / pay_now (selection)           : DEL selection_keys: ['pay_later', 'pay_now']
+account_voucher / account.voucher          / payment_journal_id (many2one) : DEL relation: account.journal
+account_voucher / account.voucher          / reference (char)              : DEL
+account_voucher / account.voucher          / state (selection)             : DEL selection_keys: ['cancel', 'draft', 'posted', 'proforma']
+account_voucher / account.voucher          / tax_amount (float)            : DEL
+account_voucher / account.voucher          / tax_correction (float)        : DEL
+account_voucher / account.voucher          / voucher_type (selection)      : DEL selection_keys: ['purchase', 'sale']
+account_voucher / account.voucher          / website_message_ids (one2many): DEL relation: mail.message
+account_voucher / account.voucher.line     / account_analytic_id (many2one): DEL relation: account.analytic.account
+account_voucher / account.voucher.line     / account_id (many2one)         : DEL relation: account.account, required
+account_voucher / account.voucher.line     / analytic_tag_ids (many2many)  : DEL relation: account.analytic.tag
+account_voucher / account.voucher.line     / company_id (many2one)         : DEL relation: res.company
+account_voucher / account.voucher.line     / name (text)                   : DEL required
+account_voucher / account.voucher.line     / price_subtotal (float)        : DEL
+account_voucher / account.voucher.line     / price_unit (float)            : DEL required
+account_voucher / account.voucher.line     / product_id (many2one)         : DEL relation: product.product
+account_voucher / account.voucher.line     / quantity (float)              : DEL required, req_default: function
+account_voucher / account.voucher.line     / sequence (integer)            : DEL
+account_voucher / account.voucher.line     / tax_ids (many2many)           : DEL relation: account.tax
+account_voucher / account.voucher.line     / voucher_id (many2one)         : DEL relation: account.voucher, required
+---XML records in module 'account_voucher'---
+DEL ir.actions.act_window: account_voucher.act_journal_voucher_open
+DEL ir.actions.act_window: account_voucher.action_purchase_receipt
+DEL ir.actions.act_window: account_voucher.action_review_voucher_list
+DEL ir.actions.act_window: account_voucher.action_sale_receipt
+DEL ir.actions.act_window.view: account_voucher.action_purchase_receipt_form
+DEL ir.actions.act_window.view: account_voucher.action_purchase_receipt_tree
+DEL ir.actions.act_window.view: account_voucher.action_sale_receipt_form
+DEL ir.actions.act_window.view: account_voucher.action_sale_receipt_tree
+DEL ir.model.access: account_voucher.access_account_voucher_invoice
+DEL ir.model.access: account_voucher.access_account_voucher_line_invoice
+DEL ir.model.access: account_voucher.access_account_voucher_line_manager
+DEL ir.model.access: account_voucher.access_account_voucher_manager
+DEL ir.rule: account_voucher.voucher_comp_rule (noupdate)
+DEL ir.rule: account_voucher.voucher_line_comp_rule (noupdate)
+DEL ir.ui.menu: account_voucher.menu_action_purchase_receipt
+DEL ir.ui.menu: account_voucher.menu_action_sale_receipt
+DEL ir.ui.view: account_voucher.account_cash_statement_graph
+DEL ir.ui.view: account_voucher.view_purchase_receipt_form
+DEL ir.ui.view: account_voucher.view_sale_receipt_form
+DEL ir.ui.view: account_voucher.view_voucher_filter
+DEL ir.ui.view: account_voucher.view_voucher_filter_sale
+DEL ir.ui.view: account_voucher.view_voucher_filter_vendor
+DEL ir.ui.view: account_voucher.view_voucher_kanban
+DEL ir.ui.view: account_voucher.view_voucher_line_form
+DEL ir.ui.view: account_voucher.view_voucher_line_tree
+DEL ir.ui.view: account_voucher.view_voucher_tree
+DEL ir.ui.view: account_voucher.view_voucher_tree_purchase
+DEL mail.message.subtype: account_voucher.mt_voucher_state_change (noupdate)
+ERROR: module not in list of installed modules:
+---Models in module 'crm_phone_validation'---
+---Fields in module 'crm_phone_validation'---
+---XML records in module 'crm_phone_validation'---
+DEL ir.ui.view: crm_phone_validation.res_config_settings_view_form
+ERROR: module not in list of installed modules:
+---Models in module 'crm_project'---
+obsolete model crm.lead.convert2task
+---Fields in module 'crm_project'---
+---XML records in module 'crm_project'---
+DEL ir.actions.act_window: crm_project.crm_lead_convert2task_action
+DEL ir.model.access: crm_project.access_project_project_sale_user
+DEL ir.model.access: crm_project.access_project_task_sale_user
+DEL ir.model.access: crm_project.access_project_task_type_sale_user
+DEL ir.ui.view: crm_project.crm_lead_convert2task_view_form
+DEL ir.ui.view: crm_project.crm_lead_view_form
+ERROR: module not in list of installed modules:
+---Models in module 'crm_reveal'---
+obsolete model crm.reveal.industry
+obsolete model crm.reveal.role
+obsolete model crm.reveal.seniority
+---Fields in module 'crm_reveal'---
+crm_reveal   / crm.lead                 / reveal_iap_credits (integer)  : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.lead                 / reveal_id (char)              : module is now 'crm_iap_lead' ('crm_reveal')
+crm_reveal   / crm.lead                 / reveal_ip (char)              : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.lead                 / reveal_rule_id (many2one)     : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.industry      / color (integer)               : DEL
+crm_reveal   / crm.reveal.industry      / name (char)                   : DEL required
+crm_reveal   / crm.reveal.industry      / reveal_id (char)              : DEL required
+crm_reveal   / crm.reveal.role          / color (integer)               : DEL
+crm_reveal   / crm.reveal.role          / name (char)                   : DEL required
+crm_reveal   / crm.reveal.role          / reveal_id (char)              : DEL required
+crm_reveal   / crm.reveal.rule          / __last_update (datetime)      : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / active (boolean)              : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / company_size_max (integer)    : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / company_size_min (integer)    : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / country_ids (many2many)       : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / display_name (char)           : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / extra_contacts (integer)      : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / industry_tag_ids (many2many)  : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / industry_tag_ids (many2many)  : relation is now 'crm.iap.lead.industry' ('crm.reveal.industry') [nothing to do]
+crm_reveal   / crm.reveal.rule          / industry_tag_ids (many2many)  : table is now 'crm_iap_lead_industry_crm_reveal_rule_rel' ('crm_reveal_industry_crm_reveal_rule_rel')
+crm_reveal   / crm.reveal.rule          / lead_for (selection)          : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / lead_ids (one2many)           : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / lead_type (selection)         : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / leads_count (integer)         : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / name (char)                   : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / opportunity_count (integer)   : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / other_role_ids (many2many)    : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / other_role_ids (many2many)    : relation is now 'crm.iap.lead.role' ('crm.reveal.role') [nothing to do]
+crm_reveal   / crm.reveal.rule          / other_role_ids (many2many)    : table is now 'crm_iap_lead_role_crm_reveal_rule_rel' ('crm_reveal_role_crm_reveal_rule_rel')
+crm_reveal   / crm.reveal.rule          / preferred_role_id (many2one)  : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / preferred_role_id (many2one)  : relation is now 'crm.iap.lead.role' ('crm.reveal.role') [nothing to do]
+crm_reveal   / crm.reveal.rule          / priority (selection)          : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / regex_url (char)              : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / seniority_id (many2one)       : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / seniority_id (many2one)       : relation is now 'crm.iap.lead.seniority' ('crm.reveal.seniority') [nothing to do]
+crm_reveal   / crm.reveal.rule          / sequence (integer)            : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / suffix (char)                 : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / tag_ids (many2many)           : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / team_id (many2one)            : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.rule          / user_id (many2one)            : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.seniority     / name (char)                   : DEL required
+crm_reveal   / crm.reveal.seniority     / reveal_id (char)              : DEL required
+crm_reveal   / crm.reveal.view          / __last_update (datetime)      : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.view          / display_name (char)           : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.view          / reveal_ip (char)              : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.view          / reveal_rule_id (many2one)     : module is now 'crm_iap_lead_website' ('crm_reveal')
+crm_reveal   / crm.reveal.view          / reveal_state (selection)      : module is now 'crm_iap_lead_website' ('crm_reveal')
+---XML records in module 'crm_reveal'---
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_1
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_10
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_100
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_101
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_102
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_103
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_104
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_105
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_106
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_107
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_108
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_109
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_11
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_110
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_111
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_112
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_113
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_114
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_115
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_116
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_117
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_118
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_119
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_12
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_120
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_121
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_122
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_123
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_124
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_125
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_126
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_127
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_128
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_129
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_13
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_130
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_131
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_132
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_133
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_134
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_135
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_136
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_137
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_138
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_139
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_14
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_140
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_141
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_142
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_143
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_144
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_145
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_146
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_147
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_148
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_149
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_15
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_150
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_151
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_152
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_153
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_154
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_155
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_156
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_157
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_158
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_159
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_16
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_160
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_161
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_162
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_163
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_164
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_165
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_166
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_167
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_168
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_169
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_17
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_170
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_171
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_172
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_173
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_174
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_175
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_176
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_177
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_178
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_179
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_18
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_180
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_181
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_182
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_183
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_184
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_185
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_186
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_187
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_188
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_189
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_19
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_190
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_191
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_192
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_193
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_194
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_195
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_196
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_197
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_198
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_199
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_2
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_20
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_200
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_201
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_202
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_203
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_204
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_205
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_206
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_207
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_208
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_209
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_21
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_210
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_211
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_212
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_213
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_214
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_215
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_216
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_217
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_218
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_219
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_22
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_220
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_221
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_222
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_223
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_224
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_225
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_226
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_227
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_228
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_229
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_23
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_230
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_231
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_232
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_233
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_234
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_235
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_236
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_237
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_24
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_25
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_26
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_27
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_28
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_29
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_3
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_30
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_31
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_32
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_33
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_34
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_35
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_36
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_37
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_38
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_39
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_4
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_40
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_41
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_42
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_43
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_44
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_45
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_46
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_47
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_48
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_49
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_5
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_50
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_51
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_52
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_53
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_54
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_55
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_56
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_57
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_58
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_59
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_6
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_60
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_61
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_62
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_63
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_64
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_65
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_66
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_67
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_68
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_69
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_7
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_70
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_71
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_72
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_73
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_74
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_75
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_76
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_77
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_78
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_79
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_8
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_80
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_81
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_82
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_83
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_84
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_85
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_86
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_87
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_88
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_89
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_9
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_90
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_91
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_92
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_93
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_94
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_95
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_96
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_97
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_98
+DEL crm.reveal.industry: crm_reveal.crm_reveal_industry_99
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_1
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_10
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_11
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_12
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_13
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_14
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_15
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_16
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_17
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_18
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_19
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_2
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_20
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_21
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_22
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_3
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_4
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_5
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_6
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_7
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_8
+DEL crm.reveal.role: crm_reveal.crm_reveal_role_9
+DEL crm.reveal.seniority: crm_reveal.crm_reveal_seniority_1
+DEL crm.reveal.seniority: crm_reveal.crm_reveal_seniority_2
+DEL crm.reveal.seniority: crm_reveal.crm_reveal_seniority_3
+DEL ir.actions.act_window: crm_reveal.crm_reveal_rule_action [renamed to crm_iap_lead_website module]
+DEL ir.actions.act_window: crm_reveal.crm_reveal_view_action [renamed to crm_iap_lead_website module]
+DEL ir.cron: crm_reveal.ir_cron_crm_reveal_lead [renamed to crm_iap_lead_website module] (noupdate)
+DEL ir.model.access: crm_reveal.access_crm_reveal_industry
+DEL ir.model.access: crm_reveal.access_crm_reveal_role
+DEL ir.model.access: crm_reveal.access_crm_reveal_rule [renamed to crm_iap_lead_website module]
+DEL ir.model.access: crm_reveal.access_crm_reveal_seniority
+DEL ir.model.access: crm_reveal.access_crm_reveal_view [renamed to crm_iap_lead_website module]
+DEL ir.ui.menu: crm_reveal.crm_reveal_rule_menu_action [renamed to crm_iap_lead_website module]
+DEL ir.ui.menu: crm_reveal.crm_reveal_view_menu_action [renamed to crm_iap_lead_website module]
+DEL ir.ui.view: crm_reveal.crm_reveal_lead_form
+DEL ir.ui.view: crm_reveal.crm_reveal_lead_opportunity_form
+DEL ir.ui.view: crm_reveal.crm_reveal_rule_form
+DEL ir.ui.view: crm_reveal.crm_reveal_rule_tree
+DEL ir.ui.view: crm_reveal.crm_reveal_view_form
+DEL ir.ui.view: crm_reveal.crm_reveal_view_tree
+DEL ir.ui.view: crm_reveal.lead_message_template
+DEL ir.ui.view: crm_reveal.res_config_settings_view_form
+DEL mail.template: crm_reveal.reveal_no_credits (noupdate)
+ERROR: module not in list of installed modules:
+---Models in module 'decimal_precision'---
+obsolete model decimal.precision.test
+---Fields in module 'decimal_precision'---
+decimal_precision / decimal.precision        / __last_update (datetime)      : module is now 'base' ('decimal_precision')
+decimal_precision / decimal.precision        / digits (integer)              : module is now 'base' ('decimal_precision')
+decimal_precision / decimal.precision        / display_name (char)           : module is now 'base' ('decimal_precision')
+decimal_precision / decimal.precision        / name (char)                   : module is now 'base' ('decimal_precision')
+decimal_precision / decimal.precision.test   / float (float)                 : DEL
+decimal_precision / decimal.precision.test   / float_2 (float)               : DEL
+decimal_precision / decimal.precision.test   / float_4 (float)               : DEL
+---XML records in module 'decimal_precision'---
+DEL ir.actions.act_window: decimal_precision.action_decimal_precision_form [renamed to base module]
+DEL ir.model.access: decimal_precision.access_decimal_precision_all
+DEL ir.model.access: decimal_precision.access_decimal_precision_config [renamed to base module]
+DEL ir.model.access: decimal_precision.access_decimal_precision_test_all
+DEL ir.ui.menu: decimal_precision.menu_decimal_precision_form [renamed to base module]
+DEL ir.ui.view: decimal_precision.view_decimal_precision_form
+DEL ir.ui.view: decimal_precision.view_decimal_precision_tree
+ERROR: module not in list of installed modules:
+---Models in module 'delivery_hs_code'---
+---Fields in module 'delivery_hs_code'---
+delivery_hs_code / product.product          / hs_code (char)                : module is now 'delivery' ('delivery_hs_code')
+delivery_hs_code / product.template         / hs_code (char)                : module is now 'delivery' ('delivery_hs_code')
+---XML records in module 'delivery_hs_code'---
+DEL ir.ui.view: delivery_hs_code.product_template_hs_code
+ERROR: module not in list of installed modules:
+---Models in module 'document'---
+---Fields in module 'document'---
+---XML records in module 'document'---
+DEL ir.ui.view: document.assets_backend
+DEL ir.ui.view: document.qunit_suite
+ERROR: module not in list of installed modules:
+---Models in module 'hr_payroll'---
+obsolete model hr.contract.advantage.template
+obsolete model hr.contribution.register
+obsolete model hr.payroll.structure
+obsolete model hr.payslip
+obsolete model hr.payslip.employees
+obsolete model hr.payslip.input
+obsolete model hr.payslip.line
+obsolete model hr.payslip.run
+obsolete model hr.payslip.worked_days
+obsolete model hr.rule.input
+obsolete model hr.salary.rule
+obsolete model hr.salary.rule.category
+obsolete model payslip.lines.contribution.register
+obsolete model report.hr_payroll.report_contributionregister
+obsolete model report.hr_payroll.report_payslipdetails
+---Fields in module 'hr_payroll'---
+hr_payroll   / hr.contract              / resource_calendar_id (False)  : DEL required, req_default: function, mode: modify
+hr_payroll   / hr.contract              / schedule_pay (selection)      : DEL selection_keys: ['annually', 'bi-monthly', 'bi-weekly', 'monthly', 'quarterly', 'semi-annually', 'weekly']
+hr_payroll   / hr.contract              / struct_id (many2one)          : DEL relation: hr.payroll.structure
+hr_payroll   / hr.contract.advantage.template / code (char)                   : DEL required
+hr_payroll   / hr.contract.advantage.template / default_value (float)         : DEL
+hr_payroll   / hr.contract.advantage.template / lower_bound (float)           : DEL
+hr_payroll   / hr.contract.advantage.template / name (char)                   : DEL required
+hr_payroll   / hr.contract.advantage.template / upper_bound (float)           : DEL
+hr_payroll   / hr.contribution.register / company_id (many2one)         : DEL relation: res.company
+hr_payroll   / hr.contribution.register / name (char)                   : DEL required
+hr_payroll   / hr.contribution.register / note (text)                   : DEL
+hr_payroll   / hr.contribution.register / partner_id (many2one)         : DEL relation: res.partner
+hr_payroll   / hr.contribution.register / register_line_ids (one2many)  : DEL relation: hr.payslip.line
+hr_payroll   / hr.employee              / slip_ids (one2many)           : DEL relation: hr.payslip
+hr_payroll   / hr.payroll.structure     / children_ids (one2many)       : DEL relation: hr.payroll.structure
+hr_payroll   / hr.payroll.structure     / code (char)                   : DEL required
+hr_payroll   / hr.payroll.structure     / company_id (many2one)         : DEL relation: res.company, required, req_default: function
+hr_payroll   / hr.payroll.structure     / name (char)                   : DEL required
+hr_payroll   / hr.payroll.structure     / note (text)                   : DEL
+hr_payroll   / hr.payroll.structure     / parent_id (many2one)          : DEL relation: hr.payroll.structure
+hr_payroll   / hr.payroll.structure     / rule_ids (many2many)          : DEL relation: hr.salary.rule
+hr_payroll   / hr.payslip               / company_id (many2one)         : DEL relation: res.company
+hr_payroll   / hr.payslip               / contract_id (many2one)        : DEL relation: hr.contract
+hr_payroll   / hr.payslip               / credit_note (boolean)         : DEL
+hr_payroll   / hr.payslip               / date_from (date)              : DEL required, req_default: function
+hr_payroll   / hr.payslip               / date_to (date)                : DEL required, req_default: function
+hr_payroll   / hr.payslip               / employee_id (many2one)        : DEL relation: hr.employee, required
+hr_payroll   / hr.payslip               / input_line_ids (one2many)     : DEL relation: hr.payslip.input
+hr_payroll   / hr.payslip               / line_ids (one2many)           : DEL relation: hr.payslip.line
+hr_payroll   / hr.payslip               / name (char)                   : DEL
+hr_payroll   / hr.payslip               / note (text)                   : DEL
+hr_payroll   / hr.payslip               / number (char)                 : DEL
+hr_payroll   / hr.payslip               / paid (boolean)                : DEL
+hr_payroll   / hr.payslip               / payslip_run_id (many2one)     : DEL relation: hr.payslip.run
+hr_payroll   / hr.payslip               / state (selection)             : DEL selection_keys: ['cancel', 'done', 'draft', 'verify']
+hr_payroll   / hr.payslip               / struct_id (many2one)          : DEL relation: hr.payroll.structure
+hr_payroll   / hr.payslip               / worked_days_line_ids (one2many): DEL relation: hr.payslip.worked_days
+hr_payroll   / hr.payslip.input         / amount (float)                : DEL
+hr_payroll   / hr.payslip.input         / code (char)                   : DEL required
+hr_payroll   / hr.payslip.input         / contract_id (many2one)        : DEL relation: hr.contract, required
+hr_payroll   / hr.payslip.input         / name (char)                   : DEL required
+hr_payroll   / hr.payslip.input         / payslip_id (many2one)         : DEL relation: hr.payslip, required
+hr_payroll   / hr.payslip.input         / sequence (integer)            : DEL required, req_default: function
+hr_payroll   / hr.payslip.line          / active (boolean)              : DEL
+hr_payroll   / hr.payslip.line          / amount (float)                : DEL
+hr_payroll   / hr.payslip.line          / amount_fix (float)            : DEL
+hr_payroll   / hr.payslip.line          / amount_percentage (float)     : DEL
+hr_payroll   / hr.payslip.line          / amount_percentage_base (char) : DEL
+hr_payroll   / hr.payslip.line          / amount_python_compute (text)  : DEL
+hr_payroll   / hr.payslip.line          / amount_select (selection)     : DEL required, selection_keys: ['code', 'fix', 'percentage'], req_default: function
+hr_payroll   / hr.payslip.line          / appears_on_payslip (boolean)  : DEL
+hr_payroll   / hr.payslip.line          / category_id (many2one)        : DEL relation: hr.salary.rule.category, required
+hr_payroll   / hr.payslip.line          / child_ids (one2many)          : DEL relation: hr.salary.rule
+hr_payroll   / hr.payslip.line          / code (char)                   : DEL required
+hr_payroll   / hr.payslip.line          / company_id (many2one)         : DEL relation: res.company
+hr_payroll   / hr.payslip.line          / condition_python (text)       : DEL required, req_default: function
+hr_payroll   / hr.payslip.line          / condition_range (char)        : DEL
+hr_payroll   / hr.payslip.line          / condition_range_max (float)   : DEL
+hr_payroll   / hr.payslip.line          / condition_range_min (float)   : DEL
+hr_payroll   / hr.payslip.line          / condition_select (selection)  : DEL required, selection_keys: ['none', 'python', 'range'], req_default: function
+hr_payroll   / hr.payslip.line          / contract_id (many2one)        : DEL relation: hr.contract, required
+hr_payroll   / hr.payslip.line          / employee_id (many2one)        : DEL relation: hr.employee, required
+hr_payroll   / hr.payslip.line          / input_ids (one2many)          : DEL relation: hr.rule.input
+hr_payroll   / hr.payslip.line          / name (char)                   : DEL required
+hr_payroll   / hr.payslip.line          / note (text)                   : DEL
+hr_payroll   / hr.payslip.line          / parent_rule_id (many2one)     : DEL relation: hr.salary.rule
+hr_payroll   / hr.payslip.line          / quantity (float)              : DEL
+hr_payroll   / hr.payslip.line          / rate (float)                  : DEL
+hr_payroll   / hr.payslip.line          / register_id (many2one)        : DEL relation: hr.contribution.register
+hr_payroll   / hr.payslip.line          / salary_rule_id (many2one)     : DEL relation: hr.salary.rule, required
+hr_payroll   / hr.payslip.line          / sequence (integer)            : DEL required, req_default: function
+hr_payroll   / hr.payslip.line          / slip_id (many2one)            : DEL relation: hr.payslip, required
+hr_payroll   / hr.payslip.line          / total (float)                 : DEL
+hr_payroll   / hr.payslip.run           / credit_note (boolean)         : DEL
+hr_payroll   / hr.payslip.run           / date_end (date)               : DEL required, req_default: function
+hr_payroll   / hr.payslip.run           / date_start (date)             : DEL required, req_default: function
+hr_payroll   / hr.payslip.run           / name (char)                   : DEL required
+hr_payroll   / hr.payslip.run           / slip_ids (one2many)           : DEL relation: hr.payslip
+hr_payroll   / hr.payslip.run           / state (selection)             : DEL selection_keys: ['close', 'draft']
+hr_payroll   / hr.payslip.worked_days   / code (char)                   : DEL required
+hr_payroll   / hr.payslip.worked_days   / contract_id (many2one)        : DEL relation: hr.contract, required
+hr_payroll   / hr.payslip.worked_days   / name (char)                   : DEL required
+hr_payroll   / hr.payslip.worked_days   / number_of_days (float)        : DEL
+hr_payroll   / hr.payslip.worked_days   / number_of_hours (float)       : DEL
+hr_payroll   / hr.payslip.worked_days   / payslip_id (many2one)         : DEL relation: hr.payslip, required
+hr_payroll   / hr.payslip.worked_days   / sequence (integer)            : DEL required, req_default: function
+hr_payroll   / hr.rule.input            / code (char)                   : DEL required
+hr_payroll   / hr.rule.input            / input_id (many2one)           : DEL relation: hr.salary.rule, required
+hr_payroll   / hr.rule.input            / name (char)                   : DEL required
+hr_payroll   / hr.salary.rule           / active (boolean)              : DEL
+hr_payroll   / hr.salary.rule           / amount_fix (float)            : DEL
+hr_payroll   / hr.salary.rule           / amount_percentage (float)     : DEL
+hr_payroll   / hr.salary.rule           / amount_percentage_base (char) : DEL
+hr_payroll   / hr.salary.rule           / amount_python_compute (text)  : DEL
+hr_payroll   / hr.salary.rule           / amount_select (selection)     : DEL required, selection_keys: ['code', 'fix', 'percentage'], req_default: function
+hr_payroll   / hr.salary.rule           / appears_on_payslip (boolean)  : DEL
+hr_payroll   / hr.salary.rule           / category_id (many2one)        : DEL relation: hr.salary.rule.category, required
+hr_payroll   / hr.salary.rule           / child_ids (one2many)          : DEL relation: hr.salary.rule
+hr_payroll   / hr.salary.rule           / code (char)                   : DEL required
+hr_payroll   / hr.salary.rule           / company_id (many2one)         : DEL relation: res.company
+hr_payroll   / hr.salary.rule           / condition_python (text)       : DEL required, req_default: function
+hr_payroll   / hr.salary.rule           / condition_range (char)        : DEL
+hr_payroll   / hr.salary.rule           / condition_range_max (float)   : DEL
+hr_payroll   / hr.salary.rule           / condition_range_min (float)   : DEL
+hr_payroll   / hr.salary.rule           / condition_select (selection)  : DEL required, selection_keys: ['none', 'python', 'range'], req_default: function
+hr_payroll   / hr.salary.rule           / input_ids (one2many)          : DEL relation: hr.rule.input
+hr_payroll   / hr.salary.rule           / name (char)                   : DEL required
+hr_payroll   / hr.salary.rule           / note (text)                   : DEL
+hr_payroll   / hr.salary.rule           / parent_rule_id (many2one)     : DEL relation: hr.salary.rule
+hr_payroll   / hr.salary.rule           / quantity (char)               : DEL
+hr_payroll   / hr.salary.rule           / register_id (many2one)        : DEL relation: hr.contribution.register
+hr_payroll   / hr.salary.rule           / sequence (integer)            : DEL required, req_default: function
+hr_payroll   / hr.salary.rule.category  / children_ids (one2many)       : DEL relation: hr.salary.rule.category
+hr_payroll   / hr.salary.rule.category  / code (char)                   : DEL required
+hr_payroll   / hr.salary.rule.category  / company_id (many2one)         : DEL relation: res.company
+hr_payroll   / hr.salary.rule.category  / name (char)                   : DEL required
+hr_payroll   / hr.salary.rule.category  / note (text)                   : DEL
+hr_payroll   / hr.salary.rule.category  / parent_id (many2one)          : DEL relation: hr.salary.rule.category
+---XML records in module 'hr_payroll'---
+DEL decimal.precision: hr_payroll.decimal_payroll
+DEL decimal.precision: hr_payroll.decimal_payroll_rate
+DEL hr.contribution.register: hr_payroll.contrib_register_employees
+DEL hr.payroll.structure: hr_payroll.structure_base
+DEL hr.salary.rule: hr_payroll.hr_rule_basic
+DEL hr.salary.rule: hr_payroll.hr_rule_net
+DEL hr.salary.rule: hr_payroll.hr_rule_taxable
+DEL hr.salary.rule.category: hr_payroll.ALW
+DEL hr.salary.rule.category: hr_payroll.BASIC
+DEL hr.salary.rule.category: hr_payroll.COMP
+DEL hr.salary.rule.category: hr_payroll.DED
+DEL hr.salary.rule.category: hr_payroll.GROSS
+DEL hr.salary.rule.category: hr_payroll.NET
+DEL ir.actions.act_window: hr_payroll.act_children_salary_rules
+DEL ir.actions.act_window: hr_payroll.act_contribution_reg_payslip_lines
+DEL ir.actions.act_window: hr_payroll.act_hr_employee_payslip_list
+DEL ir.actions.act_window: hr_payroll.act_payslip_lines
+DEL ir.actions.act_window: hr_payroll.action_contribution_register_form
+DEL ir.actions.act_window: hr_payroll.action_hr_payroll_configuration
+DEL ir.actions.act_window: hr_payroll.action_hr_payslip_by_employees
+DEL ir.actions.act_window: hr_payroll.action_hr_payslip_run_tree
+DEL ir.actions.act_window: hr_payroll.action_hr_salary_rule_category
+DEL ir.actions.act_window: hr_payroll.action_payslip_lines_contribution_register
+DEL ir.actions.act_window: hr_payroll.action_salary_rule_form
+DEL ir.actions.act_window: hr_payroll.action_view_hr_payroll_structure_list_form
+DEL ir.actions.act_window: hr_payroll.action_view_hr_payslip_form
+DEL ir.actions.act_window: hr_payroll.hr_contract_advantage_template_action
+DEL ir.actions.act_window: hr_payroll.open_payroll_modules
+DEL ir.actions.report: hr_payroll.action_contribution_register
+DEL ir.actions.report: hr_payroll.action_report_payslip
+DEL ir.actions.report: hr_payroll.payslip_details_report
+DEL ir.model.access: hr_payroll.access_hr_contract_advantage_template
+DEL ir.model.access: hr_payroll.access_hr_contract_advantage_template_hr_user
+DEL ir.model.access: hr_payroll.access_hr_contribution_register
+DEL ir.model.access: hr_payroll.access_hr_payroll_structure
+DEL ir.model.access: hr_payroll.access_hr_payroll_structure_hr_user
+DEL ir.model.access: hr_payroll.access_hr_payslip
+DEL ir.model.access: hr_payroll.access_hr_payslip_input_user
+DEL ir.model.access: hr_payroll.access_hr_payslip_line
+DEL ir.model.access: hr_payroll.access_hr_payslip_run
+DEL ir.model.access: hr_payroll.access_hr_payslip_worked_days_officer
+DEL ir.model.access: hr_payroll.access_hr_rule_input_officer
+DEL ir.model.access: hr_payroll.access_hr_salary_rule_category
+DEL ir.model.access: hr_payroll.access_hr_salary_rule_user
+DEL ir.rule: hr_payroll.hr_payroll_rule_officer (noupdate)
+DEL ir.rule: hr_payroll.hr_payslip_rule_manager (noupdate)
+DEL ir.sequence: hr_payroll.seq_salary_slip (noupdate)
+DEL ir.ui.menu: hr_payroll.hr_contract_advantage_template_menu_action
+DEL ir.ui.menu: hr_payroll.menu_action_hr_contribution_register_form
+DEL ir.ui.menu: hr_payroll.menu_action_hr_salary_rule_form
+DEL ir.ui.menu: hr_payroll.menu_department_tree
+DEL ir.ui.menu: hr_payroll.menu_hr_payroll_configuration
+DEL ir.ui.menu: hr_payroll.menu_hr_payroll_global_settings
+DEL ir.ui.menu: hr_payroll.menu_hr_payroll_root
+DEL ir.ui.menu: hr_payroll.menu_hr_payroll_structure_view
+DEL ir.ui.menu: hr_payroll.menu_hr_payslip_run
+DEL ir.ui.menu: hr_payroll.menu_hr_salary_rule_category
+DEL ir.ui.view: hr_payroll.hr_contract_advantage_template_view_form
+DEL ir.ui.view: hr_payroll.hr_contract_advantage_template_view_tree
+DEL ir.ui.view: hr_payroll.hr_contract_form_inherit
+DEL ir.ui.view: hr_payroll.hr_contribution_register_filter
+DEL ir.ui.view: hr_payroll.hr_contribution_register_form
+DEL ir.ui.view: hr_payroll.hr_contribution_register_tree
+DEL ir.ui.view: hr_payroll.hr_contribution_register_view_kanban
+DEL ir.ui.view: hr_payroll.hr_payroll_structure_view_kanban
+DEL ir.ui.view: hr_payroll.hr_payslip_run_filter
+DEL ir.ui.view: hr_payroll.hr_payslip_run_form
+DEL ir.ui.view: hr_payroll.hr_payslip_run_tree
+DEL ir.ui.view: hr_payroll.hr_payslip_run_view_kanban
+DEL ir.ui.view: hr_payroll.hr_payslip_view_kanban
+DEL ir.ui.view: hr_payroll.hr_salary_rule_category_form
+DEL ir.ui.view: hr_payroll.hr_salary_rule_category_tree
+DEL ir.ui.view: hr_payroll.hr_salary_rule_form
+DEL ir.ui.view: hr_payroll.hr_salary_rule_list
+DEL ir.ui.view: hr_payroll.hr_salary_rule_tree
+DEL ir.ui.view: hr_payroll.hr_salary_rule_view_kanban
+DEL ir.ui.view: hr_payroll.payroll_hr_employee_view_form
+DEL ir.ui.view: hr_payroll.report_contributionregister
+DEL ir.ui.view: hr_payroll.report_payslip
+DEL ir.ui.view: hr_payroll.report_payslipdetails
+DEL ir.ui.view: hr_payroll.res_config_settings_view_form
+DEL ir.ui.view: hr_payroll.view_hr_employee_grade_form
+DEL ir.ui.view: hr_payroll.view_hr_payroll_structure_filter
+DEL ir.ui.view: hr_payroll.view_hr_payroll_structure_list_view
+DEL ir.ui.view: hr_payroll.view_hr_payroll_structure_tree
+DEL ir.ui.view: hr_payroll.view_hr_payslip_by_employees
+DEL ir.ui.view: hr_payroll.view_hr_payslip_filter
+DEL ir.ui.view: hr_payroll.view_hr_payslip_form
+DEL ir.ui.view: hr_payroll.view_hr_payslip_line_filter
+DEL ir.ui.view: hr_payroll.view_hr_payslip_line_form
+DEL ir.ui.view: hr_payroll.view_hr_payslip_line_tree
+DEL ir.ui.view: hr_payroll.view_hr_payslip_tree
+DEL ir.ui.view: hr_payroll.view_hr_rule_filter
+DEL ir.ui.view: hr_payroll.view_hr_salary_rule_category_filter
+DEL ir.ui.view: hr_payroll.view_payslip_lines_contribution_register
+DEL res.groups: hr_payroll.group_hr_payroll_manager (noupdate)
+DEL res.groups: hr_payroll.group_hr_payroll_user (noupdate)
+DEL res.users: base.default_user (noupdate)
+ERROR: module not in list of installed modules:
+---Models in module 'hr_payroll_account'---
+---Fields in module 'hr_payroll_account'---
+hr_payroll_account / hr.contract              / analytic_account_id (many2one): DEL relation: account.analytic.account
+hr_payroll_account / hr.contract              / journal_id (many2one)         : DEL relation: account.journal
+hr_payroll_account / hr.payslip               / date (date)                   : DEL
+hr_payroll_account / hr.payslip               / journal_id (many2one)         : DEL relation: account.journal, required, req_default: function
+hr_payroll_account / hr.payslip               / move_id (many2one)            : DEL relation: account.move
+hr_payroll_account / hr.payslip.line          / account_credit (many2one)     : DEL relation: account.account
+hr_payroll_account / hr.payslip.line          / account_debit (many2one)      : DEL relation: account.account
+hr_payroll_account / hr.payslip.line          / account_tax_id (many2one)     : DEL relation: account.tax
+hr_payroll_account / hr.payslip.line          / analytic_account_id (many2one): DEL relation: account.analytic.account
+hr_payroll_account / hr.payslip.run           / journal_id (many2one)         : DEL relation: account.journal, required, req_default: function
+hr_payroll_account / hr.salary.rule           / account_credit (many2one)     : DEL relation: account.account
+hr_payroll_account / hr.salary.rule           / account_debit (many2one)      : DEL relation: account.account
+hr_payroll_account / hr.salary.rule           / account_tax_id (many2one)     : DEL relation: account.tax
+hr_payroll_account / hr.salary.rule           / analytic_account_id (many2one): DEL relation: account.analytic.account
+---XML records in module 'hr_payroll_account'---
+DEL ir.ui.view: hr_payroll_account.hr_contract_form_inherit
+DEL ir.ui.view: hr_payroll_account.hr_payslip_run_form_inherit
+DEL ir.ui.view: hr_payroll_account.hr_payslip_run_search_inherit
+DEL ir.ui.view: hr_payroll_account.hr_payslip_run_tree_inherit
+DEL ir.ui.view: hr_payroll_account.hr_salary_rule_form_inherit
+DEL ir.ui.view: hr_payroll_account.view_hr_payslip_inherit_form
+ERROR: module not in list of installed modules:
+---Models in module 'mrp_bom_cost'---
+---Fields in module 'mrp_bom_cost'---
+---XML records in module 'mrp_bom_cost'---
+DEL ir.actions.server: mrp_bom_cost.action_compute_price_bom_product [renamed to mrp_account module]
+DEL ir.actions.server: mrp_bom_cost.action_compute_price_bom_template [renamed to mrp_account module]
+DEL ir.ui.view: mrp_bom_cost.product_product_ext_form_view2
+DEL ir.ui.view: mrp_bom_cost.product_product_view_form_normal_inherit_extended
+DEL ir.ui.view: mrp_bom_cost.product_variant_easy_edit_view_bom_inherit
+ERROR: module not in list of installed modules:
+---Models in module 'mrp_byproduct'---
+obsolete model mrp.subproduct
+---Fields in module 'mrp_byproduct'---
+mrp_byproduct / mrp.bom                  / sub_products (one2many)       : DEL relation: mrp.subproduct
+mrp_byproduct / mrp.subproduct           / bom_id (many2one)             : DEL relation: mrp.bom
+mrp_byproduct / mrp.subproduct           / operation_id (many2one)       : DEL relation: mrp.routing.workcenter
+mrp_byproduct / mrp.subproduct           / product_id (many2one)         : DEL relation: product.product, required
+mrp_byproduct / mrp.subproduct           / product_qty (float)           : DEL required, req_default: function
+mrp_byproduct / mrp.subproduct           / product_uom_id (many2one)     : DEL relation: uom.uom, required
+mrp_byproduct / stock.move               / subproduct_id (many2one)      : DEL relation: mrp.subproduct
+---XML records in module 'mrp_byproduct'---
+DEL ir.model.access: mrp_byproduct.access_mrp_subproduct_all
+DEL ir.model.access: mrp_byproduct.access_mrp_subproduct_manager
+DEL ir.model.access: mrp_byproduct.access_mrp_subproduct_user
+DEL ir.ui.view: mrp_byproduct.mrp_subproduct_view
+ERROR: module not in list of installed modules:
+---Models in module 'payment_ogone'---
+---Fields in module 'payment_ogone'---
+payment_ogone / payment.acquirer         / ogone_alias_usage (char)      : module is now 'payment_ingenico' ('payment_ogone')
+payment_ogone / payment.acquirer         / ogone_password (char)         : module is now 'payment_ingenico' ('payment_ogone')
+payment_ogone / payment.acquirer         / ogone_pspid (char)            : module is now 'payment_ingenico' ('payment_ogone')
+payment_ogone / payment.acquirer         / ogone_shakey_in (char)        : module is now 'payment_ingenico' ('payment_ogone')
+payment_ogone / payment.acquirer         / ogone_shakey_out (char)       : module is now 'payment_ingenico' ('payment_ogone')
+payment_ogone / payment.acquirer         / ogone_userid (char)           : module is now 'payment_ingenico' ('payment_ogone')
+payment_ogone / payment.acquirer         / provider (False)              : module is now 'payment_alipay' ('payment_ogone')
+payment_ogone / payment.acquirer         / provider (False)              : selection_keys is now '['adyen', 'alipay', 'manual']' ('['adyen', 'authorize', 'buckaroo', 'manual', 'ogone']')
+---XML records in module 'payment_ogone'---
+DEL ir.ui.view: payment_ogone.acquirer_form_ogone
+DEL ir.ui.view: payment_ogone.ogone_form
+DEL ir.ui.view: payment_ogone.ogone_s2s_form
+DEL payment.acquirer: payment.payment_acquirer_ogone (noupdate)
+ERROR: module not in list of installed modules:
+---Models in module 'stock_zebra'---
+---Fields in module 'stock_zebra'---
+---XML records in module 'stock_zebra'---
+DEL ir.actions.report: stock_zebra.label_barcode_product_product [renamed to stock module]
+DEL ir.actions.report: stock_zebra.label_barcode_product_template [renamed to stock module]
+DEL ir.actions.report: stock_zebra.label_lot_template [renamed to stock module]
+DEL ir.actions.report: stock_zebra.label_package_template [renamed to stock module]
+DEL ir.actions.report: stock_zebra.label_picking_type [renamed to stock module]
+DEL ir.actions.report: stock_zebra.label_product_packaging [renamed to stock module]
+DEL ir.actions.report: stock_zebra.label_product_product [renamed to stock module]
+DEL ir.actions.report: stock_zebra.label_product_template [renamed to stock module]
+DEL ir.actions.report: stock_zebra.label_transfer_template
+DEL ir.ui.view: stock_zebra.label_barcode_product_product_view
+DEL ir.ui.view: stock_zebra.label_barcode_product_template_view
+DEL ir.ui.view: stock_zebra.label_lot_template_view
+DEL ir.ui.view: stock_zebra.label_package_template_view
+DEL ir.ui.view: stock_zebra.label_picking_type_view
+DEL ir.ui.view: stock_zebra.label_product_packaging_view
+DEL ir.ui.view: stock_zebra.label_product_product_view
+DEL ir.ui.view: stock_zebra.label_product_template_view
+DEL ir.ui.view: stock_zebra.label_transfer_template_view
+ERROR: module not in list of installed modules:
+---Models in module 'survey_crm'---
+---Fields in module 'survey_crm'---
+---XML records in module 'survey_crm'---
+DEL ir.actions.act_window: survey_crm.action_partner_survey_mail_crm
+ERROR: module not in list of installed modules:
+---Models in module 'web_settings_dashboard'---
+---Fields in module 'web_settings_dashboard'---
+---XML records in module 'web_settings_dashboard'---
+DEL ir.actions.client: web_settings_dashboard.web_settings_dashboard_action
+DEL ir.ui.menu: web_settings_dashboard.web_dashboard_menu
+DEL ir.ui.view: web_settings_dashboard.assets_backend
+DEL ir.ui.view: web_settings_dashboard.dashboard_qunit_suite
+ERROR: module not in list of installed modules:
+---Models in module 'website_hr'---
+---Fields in module 'website_hr'---
+website_hr   / hr.employee              / is_published (boolean)        : DEL
+website_hr   / hr.employee              / public_info (char)            : DEL
+website_hr   / hr.employee              / website_id (many2one)         : DEL relation: website
+---XML records in module 'website_hr'---
+DEL ir.actions.act_url: website_hr.action_open_website (noupdate)
+DEL ir.actions.todo: base.open_menu
+DEL ir.model.access: website_hr.access_hr_employee_portal
+DEL ir.model.access: website_hr.access_hr_employee_public
+DEL ir.model.access: website_hr.access_resource_portal
+DEL ir.model.access: website_hr.access_resource_public
+DEL ir.rule: website_hr.hr_employee_portal
+DEL ir.rule: website_hr.hr_employee_public
+DEL ir.ui.view: website_hr.aboutus
+DEL ir.ui.view: website_hr.assets_frontend
+DEL ir.ui.view: website_hr.hr_employee_form_view_website_published
+DEL ir.ui.view: website_hr.view_employee_tree_inherit_website
+ERROR: module not in list of installed modules:
+---Models in module 'website_sale_link_tracker'---
+---Fields in module 'website_sale_link_tracker'---
+---XML records in module 'website_sale_link_tracker'---
+DEL ir.ui.view: website_sale_link_tracker.assets_backend
+DEL ir.ui.view: website_sale_link_tracker.sale_order_from_website_link_tracker
+DEL ir.ui.view: website_sale_link_tracker.sale_report_view_search_website_inherit
+DEL ir.ui.view: website_sale_link_tracker.view_order_product_search_inherit
+ERROR: module not in list of installed modules:
+---Models in module 'website_survey'---
+---Fields in module 'website_survey'---
+---XML records in module 'website_survey'---
+DEL ir.ui.view: website_survey.assets_frontend
+DEL ir.ui.view: website_survey.survey_login_layout

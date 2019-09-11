@@ -1,0 +1,5 @@
+---Models in module 'crm_sms'---
+---Fields in module 'crm_sms'---
+---XML records in module 'crm_sms'---
+NEW ir.actions.act_window: crm_sms.crm_lead_act_window_sms_composer_multi
+NEW ir.actions.act_window: crm_sms.crm_lead_act_window_sms_composer_single

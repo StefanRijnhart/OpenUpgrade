@@ -1,0 +1,5 @@
+---Models in module 'http_routing'---
+---Fields in module 'http_routing'---
+---XML records in module 'http_routing'---
+NEW ir.ui.view: http_routing.res_lang_form_inherit_model
+NEW ir.ui.view: http_routing.res_lang_tree_inherit_model
