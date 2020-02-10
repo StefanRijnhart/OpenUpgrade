@@ -9,8 +9,8 @@
     <field name="l10n_cl_sii_code">13</field>
   </record>
   <record id="uom.product_uom_gram" model="uom.uom">
-    <field name="uom_type">smaller</field>
     <field name="name">GN</field>
+    <field name="uom_type">smaller</field>
     <field name="l10n_cl_sii_code">7</field>
   </record>
   <record id="uom.product_uom_kgm" model="uom.uom">
