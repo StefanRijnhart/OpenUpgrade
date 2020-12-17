@@ -3,7 +3,12 @@ to help the matching process
 """
 
 # Renamed modules is a mapping from old module name to new module name
-renamed_modules = {}
+renamed_modules = {
+    # odoo
+    "account_facturx": "account_edi_facturx",
+    "website_rating": "portal_rating",
+    # OCA/...
+}
 
 # Merged modules contain a mapping from old module names to other,
 # preexisting module names
